@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api";
 import CloudsWidget from "./CloudsWidget/CloudsWidget.vue";
 import TemperatureWidget from "./TemperatureWidget/TemperatureWidget.vue";
 import HumidityWidget from "./HumidityWidget/HumidityWidget.vue";
@@ -47,13 +47,18 @@ export default defineComponent({
     const clouds = ref(null);
     const temperature = ref(null);
     const showAllWidgets = ref(false);
-    async function updateWidgetsData(data: IWeather) {
+    async function updateWidgetsData(data: any) {
       const humidityRef: any = humidity.value;
       const cloudsRef: any = clouds.value;
       const temperatureRef: any = temperature.value;
-      temperatureRef.updateTemperature(data.main);
-      humidityRef.updateHumidity(data.main.humidity);
-      cloudsRef.updateWindSpeed(data.wind.speed);
+      temperatureRef.updateTemperature(
+        data.temp,
+        data.temp_max,
+        data.temp_min,
+        data.temp_feel
+      );
+      humidityRef.updateHumidity(data.humidity);
+      cloudsRef.updateWindSpeed(data.wind_speed);
       showAllWidgets.value = true;
     }
 

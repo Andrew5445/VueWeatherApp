@@ -34,13 +34,19 @@ export default defineComponent({
       temp_min: 0,
       temp_max: 0,
     });
-    function updateTemperature(main: IMain) {
-      tempData.temp = main.temp;
-      tempData.feels_like = main.feels_like;
-      tempData.temp_min = main.temp_min;
-      tempData.temp_max = main.temp_max;
+    function updateTemperature(
+      temp: number,
+      temp_max: number,
+      temp_min: number,
+      temp_feel: number
+    ) {
+      tempData.temp = temp;
+      tempData.feels_like = temp_feel;
+      tempData.temp_min = temp_min;
+      tempData.temp_max = temp_max;
       // tempData=main;
     }
+
     return { updateTemperature, tempData };
   },
 });

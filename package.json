@@ -14,11 +14,13 @@
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "css-percentage-circle": "^2.0.1",
+    "direct-vuex": "^0.12.1",
     "noty": "^3.2.0-beta-deprecated",
     "vue": "^2.6.12",
     "vue-axios": "^3.2.4",
     "vue-css-percentage-circle": "^2.0.0",
-    "vue2-circle-progress": "^1.2.3"
+    "vue2-circle-progress": "^1.2.3",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
